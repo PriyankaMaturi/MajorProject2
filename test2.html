@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hide/Show Image on Window Click</title>
+<style>
+  #myImage {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<img id="myImage" src="https://via.placeholder.com/400" alt="Placeholder Image">
+
+<button onclick="toggleImage()">Toggle Image</button>
+
+<script>
+function toggleImage() {
+  var img = document.getElementById("myImage");
+  img.style.display = img.style.display === "none" ? "block" : "none";
+}
+
+window.addEventListener("click", function(event) {
+  var img = document.getElementById("myImage");
+  if (event.target !== img && event.target.nodeName !== "BUTTON") {
+    img.style.display = "none";
+  }
+});
+</script>
+
+</body>
+</html>

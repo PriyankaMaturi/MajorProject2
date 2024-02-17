@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect to Google Maps</title>
+</head>
+<body>
+    <button onclick="redirectToGoogleMaps()">Open Google Maps</button>
+
+    <script>
+        function redirectToGoogleMaps() {
+            // Define source and destination coordinates or addresses
+            var source = "current location"; // You can set this dynamically based on user's current location
+            var destination = "vvit a block"; // You can set this based on user input or predefined value
+
+            // Construct the Google Maps URL with source and destination parameters
+            var googleMapsUrl = "https://www.google.com/maps/dir/?api=1&origin=" + encodeURIComponent(source) + "&destination=" + encodeURIComponent(destination);
+
+            // Redirect the user to the Google Maps URL
+            window.location.href = googleMapsUrl;
+        }
+    </script>
+</body>
+</html>
